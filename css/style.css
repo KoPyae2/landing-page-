@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+}
+
+.container .left, .container .right{
+    width: 50%;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    transition: all 1.5s;
+
+    position: relative;
+}
+
+.container .left{
+    background-image: url(../img/designer.jpg);
+}
+
+.container .right{
+    background-image: url(../img/developer.jpg);
+
+}
+
+
+.left h1, .right h1{
+    color: #fff;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.8);
+
+    white-space: nowrap;
+
+}
+
+
+
+.btn{
+    background:rgba(225,225,225,0.7);
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 15px 30px;
+
+    border: 2px solid #fff;
+    border-radius: 10px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+
+.btn1.btn-ripple .circle{
+    width:50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+
+    animation: myani 0.5s ease-out 1 ;
+}
+
+@keyframes myani {
+    to{
+        transform:translate(-50%,-50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.btn2{
+    border-color: #fff;
+}
+
+.btn2.btn-star .circle{
+    width:50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+
+    animation: myani1 0.5s ease-out 1 ;
+}
+
+@keyframes myani1 {
+    to{
+        transform:translate(-50%,-50%) scale(2);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+/* Material form start */
+
+.mt-form{
+    background-color: rgba(255, 255, 255, 0.333);  
+    backdrop-filter: blur(15px);
+
+    padding: 50px 30px;
+    border-radius: 10px;
+
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(2);
+    transition: all 1.5s ease-in-out;
+
+    z-index: 100;
+}
+
+
+.form-group{
+    margin: 30px 0;
+
+    position: relative;
+}
+
+.form-group input{
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    border: none;
+    border: 2px solid #fff;
+    font-size: 16px;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.form-group input:focus{
+    outline: none;
+    border-bottom-color: #000000;
+}
+
+.container a{
+    text-decoration: none;
+    color: #4287f5;
+}
+
+.form-group label{
+    color: #000;
+
+    display: inline-block;
+
+    position: absolute;
+    top: 5px;
+    left: 10px;
+
+    z-index: -1;
+
+    transition: all 0.3s;
+}
+
+.form-group label span{
+    display:inline-block;
+    transition: 0.3s;
+}
+
+.form-group input:focus + label span,
+.form-group input:valid + label span{
+    color: #fff;
+    
+    padding: 0 3px;
+    transform: translateY(-22px);
+}
+
+.formeyes{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.mt-form .btn{
+    font-size: 17px;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+    padding: 7px 0;
+    margin:0 auto;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.mt-form .btn:hover{
+    transform: scale(1);
+    background-color: #000;
+}
+
+.mt-form .exit{
+    font-size: 23px;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    cursor: pointer;
+}
+
+.formeyes{
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+}
+
+.mt-form a{
+    text-decoration: none;
+}
+
+/* Material form end */
+
+
+/* Start Signup form */
+
+.mt-form.signup{
+    z-index: 120;
+    padding: 50px 40px;
+
+    /* top: 50%;
+    transform: translate(-50%,-50%) scale(1); */
+
+}
+
+.mt-form .exitsignup{
+    font-size: 23px;
+
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    cursor: pointer;
+}
+
+/* End Signup form */
+
+
+
+/* Start Verify box */
+.verify-box{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.code-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.code{
+    width: 40px;
+    height: 40px;
+    font-size: 17px;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin: 1%;
+
+    /* for firefox */
+    -moz-appearance: textfield;
+}
+
+/* for chrome */
+.code::-webkit-inner-spin-button,
+.code::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.code:valid{
+    border-color: rgb(12, 14, 14);
+    box-shadow: 5px 5px 5px rgba(30, 28, 28, 0.5);
+}
+
+/* Ent Verifity box */
+
+
+/* Toast Noti */
+#toast-box{
+    font-family: sans-serif;
+    color: #fff;
+    background-color: rgba(0,0,0,0.8);
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%);
+    transition: top 1s;
+
+    z-index: 130;
+
+}
+
+/* For Thank Box */
+
+#thankbox{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 50px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.333);  
+    backdrop-filter: blur(15px);
+
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* start hert  */
+
+.fa-heart{
+    color: red;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,50%) scale(0);
+
+    animation: heart 0.6s linear;
+
+}
+
+@keyframes heart {
+    to{
+        transform: translate(-50%,-50%) scale(10);
+        opacity: 0;
+    }
+
+}
+
+
+
+
+
+@media (max-width:600px){
+    .btn{
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    .mt-form{
+        width: 70%;
+    }
+}
